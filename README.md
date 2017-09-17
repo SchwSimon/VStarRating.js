@@ -32,7 +32,7 @@ VsR.initQueue();  // will init all pushed rating data in the queue
 // ------- OR -------
 
 var html = '<div class="VsR" data-stars="3.5"></div>';
-html    += '<div class="VsR" data-stars="' + VsR.handlers.calcRating( [1,0,4,6,9] ) + '"></div>';
+html    += '<div class="VsR" data-stars="' + VsR.utils.calcRating( [1,0,4,6,9] ) + '"></div>';
 document.body.innerHTML = html;
 VsR.initDom();  // will init VsR on all elements with the class "VsR"
                 // the class will be removed after init so you can call VsR.initDom()
@@ -84,7 +84,7 @@ VsR.initQueue();
 
 ## Documentation
 
-- Configuration
+### Configuration
 
 **_VsR.config.setGlobalVoteCallback( [Function] callback )_**  
 Set a callback function to trigger when voted and no callback is set for the triggered rating.
@@ -93,28 +93,28 @@ Set a callback function to trigger when voted and no callback is set for the tri
 2. `stars` The amount of stars the client voted (1-5)  
 3. `root` The root element of the triggered rating  
 
-- Initiation
+### Initiation
 
-**_VsR.initOn( [Object] conf )_**   Direct initation on element given by the configuation
-**_VsR.initPush( [Object] conf )_** Queue init configurations for later initiation
+**_VsR.initOn( [Object] conf )_**   Direct initation on element given by the configuation  
+**_VsR.initPush( [Object] conf )_** Queue init configurations for later initiation  
 Expects an object with the init configuration data as following:  
 `target` The element to init VStarRating on  
 `stars` The amount of stars to display on this rating 0.00 - 5.00  
 `rating` The rating data (Array) containing the amount of votes for each star  
 `ratingOrder` The order (String) how to read the rating data.  
-`vote` Whether or not this rating is for voting or not
-`callback` The callback function to trigger on vote
-`callbackData` The data to pass as first argument to the callback function
+`vote` Whether or not this rating is for voting or not  
+`callback` The callback function to trigger on vote  
+`callbackData` The data to pass as first argument to the callback function  
 
-> `rating` has priority over `stars` 
+> `rating` has priority over `stars`  
 > The default order for the `rating` data is *ascending*, the first array index are the votes for 1 Star  
 > If your `rating` data is ordered *descending* pass `"DESC"` as `ratingOrder`.
 
-**_VsR.initQueue()_**  Inits the queue (Queued by `initPush()`)
+**_VsR.initQueue()_**  Inits the queue (Queued by `initPush()`)  
 > The Queue will be emptied after `initQueue`
 
-**_VsR.initDom()_** Inits all elements in the DOM having the class "VsR"
-> Elements initiated by `initDom()` will no longer have the class "VsR"
+**_VsR.initDom()_** Inits all elements in the DOM having the class "VsR"  
+> Elements initiated by `initDom()` will no longer have the class "VsR"  
 > So `initDom()` can be called multiple times
 
 
