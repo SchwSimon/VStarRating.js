@@ -75,6 +75,11 @@ function myGlobalCallback( data, stars, root ) {
   var id = data.split( ":" )[1]; // bis0rg5az
 }
 
+// ------- OR -------
+
+VsR.initPush({...});
+VsR.initQueue(); 
+
 ```
 
 ## Documentation
@@ -82,16 +87,16 @@ function myGlobalCallback( data, stars, root ) {
 - Configuration
 
 **_VsR.config.setGlobalVoteCallback( [Function] callback )_**  
-Set a callback function to trigger on vote if no callback  
-is set for the triggered votable star rating.
+Set a callback function to trigger when voted and no callback is set for the triggered rating.
 `callback` receives 3 arguments:  
 1. `data` The reference data you set on initating the rating or if given the `data-vote` attribute on the root element  
 2. `stars` The amount of stars the client voted (1-5)  
 3. `root` The root element of the triggered rating  
 
-- Direct element initiation
+- Initiation
 
-**_VsR.initOn( [Object] config );_**  
+**_VsR.initOn( [Object] conf )_**   Direct initation on element given by the configuation
+**_VsR.initPush( [Object] conf )_** Queue init configurations for later initiation
 Expects an object with the init configuration data as following:  
 `target` The element to init VStarRating on  
 `stars` The amount of stars to display on this rating 0.00 - 5.00  
@@ -101,12 +106,15 @@ Expects an object with the init configuration data as following:
 `callback` The callback function to trigger on vote
 `callbackData` The data to pass as first argument to the callback function
 
-> For the rating display use either `stars` or `rating`  
-> `rating` has priority over `stars`, the `rating` data will conclude to the amount of stars  
-> using the `VsR.handlers.calcRating()` function.  
+> `rating` has priority over `stars` 
 > The default order for the `rating` data is *ascending*, the first array index are the votes for 1 Star  
-> If you `rating` data is ordered *descending* pass `"DESC"` as `ratingOrder`.
+> If your `rating` data is ordered *descending* pass `"DESC"` as `ratingOrder`.
 
+**_VsR.initQueue()_**  Inits the queue (Queued by `initPush()`)
+> The Queue will be emptied after `initQueue`
 
+**_VsR.initDom()_** Inits all elements in the DOM having the class "VsR"
+> Elements initiated by `initDom()` will no longer have the class "VsR"
+> So `initDom()` can be called multiple times
 
 
