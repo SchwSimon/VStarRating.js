@@ -9,7 +9,7 @@
 ### Non votable rating:
 ```js
 VsR.initOn( targetElement, {
-  rating: [1,0,4,6,9],  // 9 are the votes for 1 Star rated (because ratingOrder is set to "DESC")
+  rating: [9,6,4,0,6],  // 9 are the votes for 1 Star rated (because ratingOrder is set to "DESC")
   ratingOrder: "DESC"   // default: "ASC"
 });
 
