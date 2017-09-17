@@ -9,20 +9,20 @@
 ### Non votable rating:
 ```js
 VsR.initOn( targetElement, {
-  rating: [9,6,4,0,6],  // 9 are the votes for 1 Star rated (because ratingOrder is set to "DESC")
+  rating: [1,4,2,0,6],  // 9 are the votes for 1 Star rated (because ratingOrder is set to "DESC")
   ratingOrder: "DESC"   // default: "ASC"
 });
 
 // ------- OR -------
 
 VsR.initOn( targetElement, {
-  stars: 3.5  // default: 0
+  stars: 2.5  // default: 0
 });
 
 // ------- OR -------
 
 VsR.initPush( targetElement, {
-  stars: 3.5
+  stars: 2.5
 });
 VsR.initQueue();  // will init all pushed rating data in the queue
 
@@ -35,8 +35,8 @@ VsR.initDom();  // will init VsR on all elements with the class "VsR"
                 // the class will be removed after init so you can call VsR.initDom()
                 // multiples times
 ```
-All will output 3.5 stars on `targetElement`:  
-![3.5 stars](https://raw.githubusercontent.com/SchwSimon/VStarRating.js/master/md/3.5stars.png "3.5 stars rated")
+All will output 2.5 stars on `targetElement`:  
+![2.5 stars](https://raw.githubusercontent.com/SchwSimon/VStarRating.js/master/md/2.5stars.png "2.5 stars rated")
 
 ### Votable rating:
 ```js
