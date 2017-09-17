@@ -28,8 +28,8 @@ VsR.initQueue();  // will init all pushed rating data in the queue
 
 // ------- OR -------
 
-var html = '<div class="VsR" data-stars="3.5"></div>';
-html    += '<div class="VsR" data-stars="' + VsR.utils.calcRating( [1,0,4,6,9] ) + '"></div>';
+var html = '<div class="VsR" data-stars="2.5"></div>';
+html    += '<div class="VsR" data-stars="' + VsR.utils.calcRating( [1,4,2,0,6], "DESC" ) + '"></div>';
 document.body.innerHTML = html;
 VsR.initDom();  // will init VsR on all elements with the class "VsR"
                 // the class will be removed after init so you can call VsR.initDom()
