@@ -41,9 +41,9 @@ All will output 2.5 stars on `targetElement`:
 ### Votable rating:
 ```js
 VsR.initOn( targetElement, {
-  vote: true  // default: false,
+  vote: true,  // default: false,
   callback: myCallback,
-  callbackData: {id:bis0rg5az}  // can be anything
+  callbackData: {id:"bis0rg5az"}  // can be anything
 });
 function myCallback( data, stars, root ) {
   // data: {id:bis0rg5az}
@@ -56,7 +56,7 @@ function myCallback( data, stars, root ) {
 VsR.config.setGlobalVoteCallback( myGlobalCallback ); // set the global vote callback
 VsR.initOn( targetElement, {
   vote: true,
-  callbackData: {id:bis0rg5az}
+  callbackData: {id:"bis0rg5az"}
 });
 function myGlobalCallback( data, stars, root ) {}
 
