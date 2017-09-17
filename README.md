@@ -36,7 +36,7 @@ VsR.initDom();  // will init VsR on all elements with the class "VsR"
                 // multiples times
 ```
 All will output 2.5 stars on `targetElement`:  
-![2.5 stars](https://raw.githubusercontent.com/SchwSimon/VStarRating.js/master/md/2.5stars.png "2.5 stars rated")
+![2.5 stars](https://github.com/SchwSimon/VStarRating.js/blob/master/md/2.5stars.png "2.5 stars rated")
 
 ### Votable rating:
 ```js
