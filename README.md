@@ -8,23 +8,20 @@
   
 ### Non votable rating:
 ```js
-VsR.initOn({
-  target: targetElement,  // target placeholder element
+VsR.initOn( targetElement, {
   rating: [1,0,4,6,9],  // 9 are the votes for 1 Star rated (because ratingOrder is set to "DESC")
   ratingOrder: "DESC"   // default: "ASC"
 });
 
 // ------- OR -------
 
-VsR.initOn({
-  target: targetElement,
+VsR.initOn( targetElement, {
   stars: 3.5  // default: 0
 });
 
 // ------- OR -------
 
-VsR.initPush({
-  target: targetElement,
+VsR.initPush( targetElement, {
   stars: 3.5
 });
 VsR.initQueue();  // will init all pushed rating data in the queue
@@ -43,8 +40,7 @@ All will output 3.5 stars on `targetElement`:
 
 ### Votable rating:
 ```js
-VsR.initOn({
-  target: targetElement,
+VsR.initOn( targetElement, {
   vote: true  // default: false,
   callback: myCallback,
   callbackData: {id:bis0rg5az}  // can be anything
@@ -58,8 +54,7 @@ function myCallback( data, stars, root ) {
 // ------- OR -------
 
 VsR.config.setGlobalVoteCallback( myGlobalCallback ); // set the global vote callback
-VsR.initOn({
-  target: targetElement,
+VsR.initOn( targetElement, {
   vote: true,
   callbackData: {id:bis0rg5az}
 });
@@ -95,16 +90,16 @@ Set a callback function to trigger when voted and no callback is set for the tri
 
 ### Initiation
 
-**_VsR.initOn( [Object] conf )_**   Direct initation on element given by the configuation  
-**_VsR.initPush( [Object] conf )_** Queue init configurations for later initiation  
-Expects an object with the init configuration data as following:  
-`target` The element to init VStarRating on  
-`stars` The amount of stars to display on this rating 0.00 - 5.00  
-`rating` The rating data (Array) containing the amount of votes for each star  
-`ratingOrder` The order (String) how to read the rating data.  
-`vote` Whether or not this rating is for voting or not  
-`callback` The callback function to trigger on vote  
-`callbackData` The data to pass as first argument to the callback function  
+**_VsR.initOn( [Element] target, [Object] conf )_** Direct initation on element given by the configuation  
+**_VsR.initPush( [Element] target, [Object] conf )_** Queue init configurations for later initiation  
+  * `target` The target element to init VStarRating on  
+  * `conf` The target init configuration data:  
+   "stars" The amount of stars to display on this rating 0.00 - 5.00  
+   "rating" The rating data (Array) containing the amount of votes for each star  
+   "ratingOrder" The order (String) how to read the rating data.  
+   "vote Whether" or not this rating is for voting or not  
+   "callback" The callback function to trigger on vote  
+   "callbackData" The data to pass as first argument to the callback function  
 
 > `rating` has priority over `stars`  
 > The default order for the `rating` data is *ascending*, the first array index are the votes for 1 Star  
