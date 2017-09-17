@@ -27,4 +27,4 @@ VsR.initSingle({
 });
 ```
 Output on `targetElement`: 
-![3.5 stars](https://github.com/SchwSimon/md/3.5stars.png "3.5 stars rated")
+![3.5 stars](https://raw.githubusercontent.com/SchwSimon/VStarRating.js/master/md/3.5stars.png "3.5 stars rated")
